@@ -1,176 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sun Raise Talagang | 50+ Projects Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-:root {
---primary: #004aad; /* Sunrise Blue */
---accent: #ed1c24; /* Sunrise Red */
---gold: #ff8c00;
---light: #f4f7f6;
---dark: #1a1a1a;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun Rise Paints Talagang | Premium Coatings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #004aad; --accent: #ed1c24; --gold: #ffb400; --dark: #0f172a; }
+        * { margin:0; padding:0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        body { 
+            background-color: #f1f5f9;
+            background-image: linear-gradient(rgba(241,245,249,0.95), rgba(241,245,249,0.95)), url('pics/img-1.jpg');
+            background-attachment: fixed; background-size: cover;
+        }
 
-* { margin:0; padding:0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-body { background-color: var(--light); color: var(--dark); }
+        /* Top Bar */
+        .top-bar { background: var(--primary); color: white; padding: 8px 8%; display: flex; justify-content: space-between; font-size: 0.85rem; }
 
-/* Navigation Section */
-nav {
-background: #fff; padding: 10px 8%; display: flex;
-justify-content: space-between; align-items: center;
-box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: sticky; top:0; z-index: 1000;
-}
-.logo-container { display: flex; align-items: center; gap: 15px; }
-.logo-container img { height: 70px; border-radius: 5px; object-fit: contain; }
-.brand-text h1 { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; color: var(--primary); line-height: 1; }
-.brand-text span { color: var(--accent); }
-.brand-text p { font-size: 0.75rem; letter-spacing: 2px; font-weight: 600; color: #666; }
+        /* Professional Nav */
+        nav {
+            background: rgba(255, 255, 255, 0.98); padding: 15px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000;
+        }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-area img { height: 75px; border-radius: 8px; }
+        .brand h1 { font-family: 'Montserrat'; font-size: 1.6rem; color: var(--primary); line-height: 1; }
+        .brand span { color: var(--accent); }
 
-/* Hero / Introduction */
-.hero {
-padding: 100px 8% 60px; text-align: center;
-background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
-}
-.hero h2 { font-family: 'Montserrat', sans-serif; font-size: 3rem; color: var(--primary); margin-bottom: 15px; }
-.hero p { font-size: 1.2rem; color: #555; max-width: 800px; margin: 0 auto 30px; }
-.badge-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-.badge { background: white; padding: 10px 20px; border-radius: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); font-weight: 600; font-size: 0.9rem; border-left: 4px solid var(--accent); }
+        /* Hero / Welcome Section */
+        .welcome-section { padding: 80px 8%; text-align: center; background: white; margin-bottom: 40px; }
+        .welcome-section h2 { font-family: 'Montserrat'; font-size: 2.5rem; color: var(--dark); margin-bottom: 20px; }
+        .welcome-section p { max-width: 900px; margin: 0 auto 30px; line-height: 1.8; color: #555; }
 
-/* Mega Gallery Grid */
-.gallery-container { padding: 40px 8% 80px; }
-.section-title { margin-bottom: 40px; border-left: 6px solid var(--gold); padding-left: 20px; }
-.section-title h3 { font-size: 2rem; color: var(--primary); font-family: 'Montserrat'; }
+        /* Feature Cards (Preparation, Painting, Service) */
+        .features { display: flex; gap: 20px; padding: 0 8% 60px; flex-wrap: wrap; }
+        .f-card { flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 15px; text-align: center; border-bottom: 5px solid var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .f-card h3 { color: var(--primary); margin-bottom: 15px; font-family: 'Montserrat'; }
 
-/* Masonry Layout */
-#photo-grid {
-column-count: 4;
-column-gap: 20px;
-}
+        /* Gallery Sections */
+        .section-container { padding: 40px 8%; }
+        .section-header { 
+            margin-bottom: 40px; border-left: 8px solid var(--primary); 
+            padding-left: 20px; background: #fff; padding-top: 15px; padding-bottom: 15px;
+            box-shadow: 10px 0 0 var(--accent) inset;
+        }
+        .section-header h2 { font-family: 'Montserrat'; font-size: 2rem; color: var(--dark); }
 
-.photo-item {
-background: #fff; margin-bottom: 20px; border-radius: 12px;
-overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-break-inside: avoid; transition: 0.4s ease;
-border: 1px solid rgba(0,0,0,0.05);
-position: relative;
-}
+        .gallery-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px; margin-bottom: 60px;
+        }
 
-.photo-item:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,74,173,0.15); }
-.photo-item img { width: 100%; display: block; height: auto; transition: 0.5s; }
-.photo-item:hover img { transform: scale(1.05); }
+        .card {
+            background: white; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.4s;
+            height: 350px; position: relative;
+        }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 100%; object-fit: cover; }
+        .card .label { position: absolute; bottom: 0; width: 100%; background: rgba(0,74,173,0.85); color: white; padding: 15px; font-weight: 600; text-align: center; }
 
-.photo-tag {
-position: absolute; top: 10px; right: 10px;
-background: rgba(255, 140, 0, 0.9); color: white;
-padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: bold;
-}
+        /* Footer */
+        footer { background: var(--dark); color: white; padding: 60px 8% 30px; }
+        .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+        .footer-col { flex: 1; min-width: 250px; }
+        .footer-col h4 { color: var(--gold); margin-bottom: 20px; font-family: 'Montserrat'; }
 
-.photo-info { padding: 15px; text-align: center; background: white; }
-.photo-info p { font-size: 0.9rem; font-weight: 600; color: var(--primary); }
+        .call-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 2000; }
 
-/* Floating WhatsApp Button */
-.whatsapp-float {
-position: fixed; bottom: 30px; right: 30px;
-background: #25d366; color: white; padding: 15px 25px;
-border-radius: 50px; text-decoration: none; font-weight: bold;
-box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 2000;
-display: flex; align-items: center; gap: 10px; transition: 0.3s;
-}
-.whatsapp-float:hover { transform: scale(1.1); background: #1eb954; }
-
-/* Footer */
-footer { background: var(--dark); color: #ccc; padding: 60px 8% 20px; text-align: center; }
-.footer-content h4 { color: white; font-family: 'Montserrat'; font-size: 1.5rem; margin-bottom: 10px; }
-.dev-credit { margin-top: 40px; font-size: 0.8rem; color: #666; border-top: 1px solid #333; padding-top: 20px; }
-
-/* Responsive Design */
-@media (max-width: 1200px) { #photo-grid { column-count: 3; } }
-@media (max-width: 768px) {
-#photo-grid { column-count: 2; }
-.hero h2 { font-size: 2rem; }
-nav { flex-direction: column; gap: 15px; text-align: center; }
-}
-@media (max-width: 480px) {
-#photo-grid { column-count: 1; }
-.hero { padding-top: 50px; }
-}
-</style>
+        @media (max-width: 768px) { .hero h2 { font-size: 1.8rem; } .features { flex-direction: column; } }
+    </style>
 </head>
 <body>
 
-<nav>
-<div class="logo-container">
-<img src="logo.png" alt="Sun Raise Paints Logo">
-<div class="brand-text">
-<h1>SUN RAISE <span>TALAGANG</span></h1>
-<p>SHINE LIKE SUN</p>
-</div>
-</div>
-<div style="background: var(--primary); color: white; padding: 8px 20px; border-radius: 5px;">
-<p style="font-size: 0.8rem;">Advisory by:</p>
-<p style="font-weight: bold;">Mr. Muzamil Sahib</p>
-</div>
-</nav>
+    <div class="top-bar">
+        <span>📍 Talagang, Punjab, Pakistan</span>
+        <span>📞 Call us: +92-317-5583628</span>
+    </div>
 
-<header class="hero">
-<h2>Expert Painting Solutions</h2>
-<p>Providing premium Weather All finishes and computerized house previews. Our work speaks for itself across Talagang.</p>
-<div class="badge-container">
-<div class="badge">50+ Completed Projects</div>
-<div class="badge">Weather Shield Expert</div>
-<div class="badge">Computerized Previews</div>
-</div>
-</header>
+    <nav>
+        <div class="logo-area">
+            <img src="logo.png" alt="Sun Rise Logo">
+            <div class="brand">
+                <h1>SUN RISE <span>TALAGANG</span></h1>
+                <p style="font-size: 0.7rem; font-weight: 800; color: #64748b; letter-spacing: 2px;">SHINE LIKE SUN</p>
+            </div>
+        </div>
+        <div style="background: var(--gold); padding: 10px 20px; border-radius: 5px; font-weight: 700;">
+            Hafiz Sahib Advisory
+        </div>
+    </nav>
 
-<main class="gallery-container">
-<div class="section-title">
-<h3>Our Work Portfolio</h3>
-<p>A showcase of our recent exterior and interior projects</p>
-</div>
+    <section class="welcome-section">
+        <h2>Welcome to SUN RISE Paints Talagang</h2>
+        <p>
+            Sun Rise Paints is a leading supplier of decorative and architectural coatings in the Talagang region. 
+            Dedicated to bringing customers the latest innovations and the finest quality, we specialize in Weather All finishes 
+            and premium computerized house previews. Our strength lies in technical excellence and high customer satisfaction.
+        </p>
+        <div class="features">
+            <div class="f-card">
+                <h3>PREPARATION</h3>
+                <p>Identifying and conforming to the specific needs of our Talagang community and customers.</p>
+            </div>
+            <div class="f-card">
+                <h3>PAINTING</h3>
+                <p>Professional application with a focus on durability and flawless finish for every home.</p>
+            </div>
+            <div class="f-card">
+                <h3>SERVICE</h3>
+                <p>Ensuring every project is handled with honesty, loyalty, and technical expertise.</p>
+            </div>
+        </div>
+    </section>
 
-<div id="photo-grid"></div>
-</main>
+    <div class="section-container">
+        <div class="section-header">
+            <h2>Our Premium Products</h2>
+            <p>Authorized Dealer of Weather All, Gold Series, and Industrial Coatings</p>
+        </div>
+        <div id="product-grid" class="gallery-grid">
+            </div>
+    </div>
 
-<a href="https://wa.me/923175583628" class="whatsapp-float">
-<span>Contact: 0317-5583628</span>
-</a>
+    <div class="section-container">
+        <div class="section-header" style="border-left-color: var(--accent);">
+            <h2>Our Masterpieces</h2>
+            <p>Real-life transformations and exterior paint designs in Talagang</p>
+        </div>
+        <div id="home-grid" class="gallery-grid">
+            </div>
+    </div>
 
-<script>
-// Mateen Boss: Set this to the exact number of images you have in the 'pics' folder
-const totalImages = 57;
-const grid = document.getElementById('photo-grid');
+    <a href="https://wa.me/923175583628" class="call-btn">WhatsApp: 0317-5583628</a>
 
-for (let i = 1; i <= totalImages; i++) {
-const item = document.createElement('div');
-item.className = 'photo-item';
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>CONTACT DETAILS</h4>
+                <p>Main Bazaar / Area Office, Talagang.</p>
+                <p>Email: info@sunrisepaints.com.pk</p>
+                <p>Phone: +92-317-5583628</p>
+            </div>
+            <div class="footer-col">
+                <h4>WHY CHOOSE US</h4>
+                <p>Sun Rise Talagang is led by a team with years of experience in paint application and computerized color matching.</p>
+            </div>
+            <div class="footer-col">
+                <h4>ADVISORY</h4>
+                <p>Managed and Supervised by Mr. Hafiz Sahib, ensuring quality at every step.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px; border-top: 1px solid #334155; padding-top: 20px; font-size: 0.8rem; color: #94a3b8;">
+            Proudly Designed by Mateen Khan Boss | Copyright © 2026. All rights reserved.
+        </div>
+    </footer>
 
-// Format: Expects images to be named img1.jpg, img2.jpg, etc. inside 'pics' folder
-item.innerHTML = `
-<div class="photo-tag">Weather All</div>
-<img src="pics/img${i}.jpg" alt="Sun Raise Project ${i}" loading="lazy"
-onerror="this.parentElement.style.display='none';">
-<div class="photo-info">
-<p>Project Showcase #${i}</p>
-</div>
-`;
-grid.appendChild(item);
-}
-</script>
+    <script>
+        const prodGrid = document.getElementById('product-grid');
+        const homeGrid = document.getElementById('home-grid');
+        const total = 57; 
 
-<footer>
-<div class="footer-content">
-<h4>Sun Raise Paints Talagang</h4>
-<p>Authorized Dealer & Application Expert</p>
-<p style="margin-top: 15px; color: var(--gold);">Address: Talagang, Punjab, Pakistan</p>
-</div>
-<div class="dev-credit">
-<p>Developed & Maintained by <strong>Mateen Khan Boss</strong></p>
-<p>&copy; 2026 Sun Raise Talagang. All Rights Reserved.</p>
-</div>
-</footer>
-
+        for (let i = 1; i <= total; i++) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            const imgPath = `pics/img-${i}.jpg`;
+            
+            // Logic: img-1 se img-15 tak dabay, baqi ghar
+            if (i <= 15) {
+                card.innerHTML = `<img src="${imgPath}" loading="lazy"><div class="label">Sun Rise Product</div>`;
+                prodGrid.appendChild(card);
+            } else {
+                card.innerHTML = `<img src="${imgPath}" loading="lazy"><div class="label">Project Gallery</div>`;
+                homeGrid.appendChild(card);
+            }
+            card.querySelector('img').onerror = function() { card.style.display = 'none'; };
+        }
+    </script>
 </body>
 </html>
